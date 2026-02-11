@@ -108,6 +108,9 @@ button:hover {
 .botao-login {
     background-color: rgb(73, 74, 94);
     color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .botao-login:hover {
@@ -120,4 +123,14 @@ button:hover {
     margin-bottom: 10px;
     min-height: 18px;
     font-weight: bold;
+}
+
+.login-box .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 2px solid #2f4054;
+    object-fit: cover;
 }
