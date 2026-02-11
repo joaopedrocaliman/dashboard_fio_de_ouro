@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Fio de Ouro</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Fio de Ouro | Sistema de Monitoramento</h1>
+    </header>
+
+    <main class="login-container">
+
+        <div class="login-box">
+            <h2>Acesso ao Sistema</h2>
+
+            <form onsubmit="return entrar()">
+
+                <input type="text" id="usuario" placeholder="Usuário">
+
+                <input type="password" id="senha" placeholder="Senha">
+
+                <p id="mensagem-erro" class="erro"></p>
+
+                <button class="botao-login" type="submit">Entrar</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <br>
+        <p>&copy; 2026 Fio de Ouro Têxtil - Monitoramento de Ativos em Tempo Real</p>
+    </footer>
+
+    <script src="./scripts/login.js"></script>
+    
+</body>
+</html>
