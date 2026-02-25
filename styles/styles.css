@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.main-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+main {
+    padding: 40px;
+}
+
+.titulo-secao {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-top: 2px solid #ccc;
+}
+
+.grupo-maquinas {
+    display: flex;
+    gap: 20px; 
+}
+
+.card-maquina {
+    background-color: #ccc;
+    padding-right: 10px;
+    border: 2px solid black;
+    max-width: 400px;
+    margin: 10px 0;
+    text-align: center;
+    min-width: 350px;
+    border-radius: 10px;
+}
+
+.card-maquina ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+.img-tear {
+    width: 4cm;
+    height: 3cm;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+button {
+    background-color: rgb(202, 202, 7);
+    margin-bottom: 15px;
+    padding: 3px 6px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(158, 158, 13);
+}
+
+.rodape {
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+    margin-top: 40px;
+}
+
+a {
+    color: white;
+    float: right;
+    margin-top: -80px;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 6px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+
+}
+a:hover {
+    background-color: rgb(179, 13, 13);
+}
+
+/* ================= MODAL =================*/
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    font-family: Arial, sans-serif;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+#btn-sim {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+#btn-sim:hover {
+    background-color: #218838;
+}
+
+#btn-nao {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#btn-nao:hover {
+    background-color: #c82333;
+}
+
+.btn-power {
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    margin-left: 8px;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50;
+}
+
+.btn-power:hover {
+    background-color: #3e5f7f;
+}
+
+#power-sim {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+#power-nao {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.temp-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-temp {
+    font-size: 15px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    background-color: #2c3e50;
+}
+
+.btn-temp:hover {
+    background-color: #3e5f7f;
+}
+
+#sair-sim {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+#sair-sim:hover {
+    background-color: #218838;
+}
+
+#sair-nao {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#sair-nao:hover {
+    background-color: #c82333;
+}
+
+
+/* ================= LOGIN ================= */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.login-box {
+    background-color: #dcdcdc;
+    padding: 40px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #2f4054;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.login-box button {
+    width: 100%;
+}
+
+.botao-login {
+    background-color: rgb(73, 74, 94);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao-login:hover {
+    background-color: #2c3e50;
+}
+
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    min-height: 18px;
+    font-weight: bold;
+}
+
+.login-box .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 2px solid #2f4054;
+    object-fit: cover;
+}
+.rodape-login {
+    padding: 27px;
+    text-align: center;
+    background-color: #ddd;
+    margin-top: 40px;
+}
