@@ -95,7 +95,7 @@ powerSim.addEventListener('click', () => {
         powerIcon.style.color = "red";    // Desligado = vermelho
     } else {
         statusSpan.textContent = "Ligado";
-        powerIcon.style.color = "green";  // Ligado = verde
+        powerIcon.style.color = "#28a745";  // Ligado = verde
     }
 
     modalPower.style.display = "none";
