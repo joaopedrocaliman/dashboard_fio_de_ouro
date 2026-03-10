@@ -53,7 +53,12 @@ main {
     text-align: center;
     min-width: 350px;
     border-radius: 10px;
-    border-top:6px solid #0c9529;
+    border-top: 6px solid #0c9529;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-maquina:hover {
+    transform: scale(1.05);
 }
 
 .card-maquina ul {
