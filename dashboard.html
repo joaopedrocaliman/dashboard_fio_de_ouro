@@ -171,61 +171,61 @@
     <footer class="rodape">
         <p>&copy; 2026 Fio de Ouro Têxtil - Monitoramento de Ativos em Tempo Real</p>
     </footer>
-    <!-- Estrutura do Modal -->
-<div id="modal-ocorrencia" class="modal-overlay">
-    <div class="modal-content">
-        <span id="btn-fechar" class="close-button">&times;</span>
+        <!-- Estrutura do Modal -->
+        <div id="modal-ocorrencia" class="modal-overlay">
+            <div class="modal-content">
+                <span id="btn-fechar" class="close-button">&times;</span>
 
-        <div id="modal-pergunta">
-            <h2>Registrar Ocorrência</h2>
-            <br>
-            <p>Deseja enviar ocorrência para esta máquina?</p>
-            <br>
-            <button id="btn-sim">Sim</button>
-            <button id="btn-nao">Não</button>
+            <div id="modal-pergunta">
+                <h2>Registrar Ocorrência</h2>
+                <br>
+                    <p>Deseja enviar ocorrência para esta máquina?</p>
+                <br>
+                <button id="btn-sim">Sim</button>
+                <button id="btn-nao">Não</button>
+            </div>
+
+            <div id="modal-confirmacao" style="display: none;">
+                <h2>Ocorrência Enviada</h2>
+                <br>
+                <p>O supervisor foi notificado com sucesso.</p>
+            </div>
+
+    </div>
+    </div>
+        <!-- Modal Power -->
+        <div id="modal-power" class="modal-overlay">
+        <div class="modal-content">
+            <span id="fechar-power" class="close-button">&times;</span>
+
+            <div id="power-pergunta">
+                <h2 id="power-titulo">Alterar Status</h2><br>
+                    <p id="power-texto"></p>
+                <br>
+                <button id="power-sim">Sim</button>
+                <button id="power-nao">Não</button>
+            </div>
         </div>
-
-        <div id="modal-confirmacao" style="display: none;">
-            <h2>Ocorrência Enviada</h2>
-            <br>
-            <p>O supervisor foi notificado com sucesso.</p>
-        </div>
-
     </div>
-</div>
-<!-- Modal Power -->
-<div id="modal-power" class="modal-overlay">
-    <div class="modal-content">
-        <span id="fechar-power" class="close-button">&times;</span>
-
-        <div id="power-pergunta">
-            <h2 id="power-titulo">Alterar Status</h2><br>
-            <p id="power-texto"></p>
-            <br>
-            <button id="power-sim">Sim</button>
-            <button id="power-nao">Não</button>
+        <div id="modal-temp" class="modal-overlay">
+        <div class="modal-content">
+            <span id="btn-fechar-temp" class="close-button">&times;</span>
+            <h2>Gráfico de Temperatura</h2>
+            <canvas id="chart-temp" width="300" height="200"></canvas>
         </div>
     </div>
-</div>
-<div id="modal-temp" class="modal-overlay">
-    <div class="modal-content">
-        <span id="btn-fechar-temp" class="close-button">&times;</span>
-        <h2>Gráfico de Temperatura</h2>
-        <canvas id="chart-temp" width="300" height="200"></canvas>
-    </div>
-</div>
-<!-- Modal de Confirmação Sair -->
-<div id="modal-sair" class="modal-overlay">
-    <div class="modal-content">
-        <span id="fechar-sair" class="close-button">&times;</span>
-        <h2>Confirmação</h2>
-        <br>
-        <p>Deseja realmente sair do sistema?</p>
-        <br>
-        <button id="sair-sim">Sim</button>
-        <button id="sair-nao">Não</button>
-    </div>
-</div>
+        <!-- Modal de Confirmação Sair -->
+        <div id="modal-sair" class="modal-overlay">
+            <div class="modal-content">
+                <span id="fechar-sair" class="close-button">&times;</span>
+                <h2>Confirmação</h2>
+                <br>
+                    <p>Deseja realmente sair do sistema?</p>
+                <br>
+                <button id="sair-sim">Sim</button>
+                <button id="sair-nao">Não</button>
+        </div>
+        </div>
     <script src="scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
