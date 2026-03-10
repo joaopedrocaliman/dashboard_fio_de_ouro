@@ -51,15 +51,23 @@ const powerNao = document.getElementById('power-nao');
 let maquinaSelecionada = null;
 const botoesPower = document.querySelectorAll('.btn-power');
 
-// Inicializa cor do power conforme status ao carregar a página
+// Cores padronizadas
+const COR_LIGADO = "#28a745";  // verde
+const COR_DESLIGADO = "red";   // vermelho
+const BORDA_LIGADO = "6px solid #0c9529"; // verde borda
+const BORDA_DESLIGADO = "6px solid red";  // vermelho borda
+
+// Inicializa cor do power e borda conforme status ao carregar a página
 document.querySelectorAll('.card-maquina').forEach(card => {
     const statusSpan = card.querySelector('.status-texto');
     const powerIcon = card.querySelector('.btn-power');
 
     if (statusSpan.textContent === "Ligado") {
-        powerIcon.style.color = "#0bac30";  // Ligado = verde
+        powerIcon.style.color = COR_LIGADO;
+        card.style.borderTop = BORDA_LIGADO;
     } else {
-        powerIcon.style.color = "red";    // Desligado = vermelho
+        powerIcon.style.color = COR_DESLIGADO;
+        card.style.borderTop = BORDA_DESLIGADO;
     }
 });
 
@@ -69,11 +77,9 @@ botoesPower.forEach(botao => {
         maquinaSelecionada = e.target.closest('.card-maquina');
         const statusTexto = maquinaSelecionada.querySelector('.status-texto').textContent;
 
-        if (statusTexto === "Ligado") {
-            powerTexto.textContent = "Deseja desligar a máquina?";
-        } else {
-            powerTexto.textContent = "Deseja ligar a máquina?";
-        }
+        powerTexto.textContent = (statusTexto === "Ligado") 
+            ? "Deseja desligar a máquina?" 
+            : "Deseja ligar a máquina?";
 
         modalPower.style.display = "flex";
     });
@@ -84,18 +90,19 @@ powerNao.addEventListener('click', () => {
     modalPower.style.display = "none";
 });
 
-// Botão SIM → alterna status e cor do power
+// Botão SIM → alterna status, cor do power e borda
 powerSim.addEventListener('click', () => {
-
     const statusSpan = maquinaSelecionada.querySelector('.status-texto');
     const powerIcon = maquinaSelecionada.querySelector('.btn-power');
 
     if (statusSpan.textContent === "Ligado") {
         statusSpan.textContent = "Desligado";
-        powerIcon.style.color = "red";    // Desligado = vermelho
+        powerIcon.style.color = COR_DESLIGADO;
+        maquinaSelecionada.style.borderTop = BORDA_DESLIGADO;
     } else {
         statusSpan.textContent = "Ligado";
-        powerIcon.style.color = "#28a745";  // Ligado = verde
+        powerIcon.style.color = COR_LIGADO;
+        maquinaSelecionada.style.borderTop = BORDA_LIGADO;
     }
 
     modalPower.style.display = "none";
@@ -112,13 +119,14 @@ window.addEventListener('click', (event) => {
         modalPower.style.display = "none";
     }
 });
-// Modal de temperatura
+
+// ================= MODAL TEMPERATURA =================
 const modalTemp = document.getElementById('modal-temp');
 const btnFecharTemp = document.getElementById('btn-fechar-temp');
 const botoesTemp = document.querySelectorAll('.btn-temp');
 let chartTemp = null;
 
-// Exemplo de dados (você pode atualizar dinamicamente)
+// Exemplo de dados (atualize dinamicamente se precisar)
 const exemploDados = {
     labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00'],
     datasets: [{
@@ -135,10 +143,8 @@ botoesTemp.forEach(botao => {
     botao.addEventListener('click', (e) => {
         modalTemp.style.display = 'flex';
 
-        // Se já existir um gráfico anterior, destrói
         if(chartTemp) chartTemp.destroy();
 
-        // Cria novo gráfico
         const ctx = document.getElementById('chart-temp').getContext('2d');
         chartTemp = new Chart(ctx, {
             type: 'line',
@@ -153,29 +159,26 @@ botoesTemp.forEach(botao => {
     });
 });
 
-// Fechar modal
+// Fechar modal temperatura
 btnFecharTemp.onclick = () => modalTemp.style.display = 'none';
 window.addEventListener('click', (e) => {
     if(e.target === modalTemp) modalTemp.style.display = 'none';
 });
-// Seleciona o botão SAIR
+
+// ================= MODAL SAIR =================
 const btnSair = document.querySelector('a[href="./login.html"]');
 const modalSair = document.getElementById('modal-sair');
 const fecharSair = document.getElementById('fechar-sair');
 const sairSim = document.getElementById('sair-sim');
 const sairNao = document.getElementById('sair-nao');
 
-// Abrir modal ao clicar
 btnSair.addEventListener('click', function(e) {
-    e.preventDefault(); // evita ir direto para login
+    e.preventDefault();
     modalSair.style.display = 'flex';
 });
 
-// Fechar modal
 fecharSair.addEventListener('click', () => modalSair.style.display = 'none');
 sairNao.addEventListener('click', () => modalSair.style.display = 'none');
-
-// Confirmar saída
 sairSim.addEventListener('click', () => {
-    window.location.href = './index.html'; // redireciona para login
+    window.location.href = './index.html';
 });

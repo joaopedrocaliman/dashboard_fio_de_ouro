@@ -17,6 +17,16 @@ body {
     text-align: center;
 }
 
+.titulo-maquina {
+    font-size: 20px;
+    margin-top: px;
+    background-color: #2c3e50;
+    margin-right: -10px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 main {
     padding: 40px;
 }
@@ -24,6 +34,7 @@ main {
 .titulo-secao {
     margin-bottom: 20px;
     padding-bottom: 10px;
+    padding-top: 10px;
     border-top: 2px solid #ccc;
 }
 
@@ -33,7 +44,7 @@ main {
 }
 
 .card-maquina {
-    background-color: #ccc;
+    background-color: #cccccc;
     padding-right: 10px;
     border: 2px solid black;
     max-width: 400px;
@@ -41,6 +52,7 @@ main {
     text-align: center;
     min-width: 350px;
     border-radius: 10px;
+    border-top:6px solid #0c9529;
 }
 
 .card-maquina ul {
@@ -54,8 +66,8 @@ main {
     height: 3cm;
 }
 
-ul {
-  list-style-position: inside;
+.status-func {
+    margin-top: 15px;
 }
 
 button {
